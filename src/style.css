@@ -63,6 +63,7 @@ select {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 .form-control {
@@ -93,6 +94,8 @@ select {
   -webkit-text-fill-color: transparent;
   background-size: 400%;
   animation: bg-animation 3s infinite alternate;
+  z-index: 10;
+  padding: 0 0 2rem;
 }
 .form-heading h1 {
   text-shadow: 1px 1px white;
@@ -117,13 +120,24 @@ select {
   font-size: 1.2rem;
   padding: 1rem 0.5rem;
 }
+.sub-sub-heading {
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem 0.5rem;
+}
 
 .grid-col-3 {
+  :nth-child(even){
+    order: 1;
+  }
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 .grid-col-2 {
+  :nth-child(even){
+    order: 1;
+  }
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -208,10 +222,16 @@ select {
     width: 100%;
   }
   .grid-col-3 {
+    :nth-child(even){
+      order: 0;
+    }
     grid-template-columns: 1fr;
   }
 
   .grid-col-2 {
+    :nth-child(even){
+      order: 0;
+    }
     grid-template-columns: 1fr;
   }
 }
