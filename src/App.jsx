@@ -1,13 +1,11 @@
 import React from "react";
-import ApplicantForm from "./ApplicantForm";
-import YourFormComponent from "./YourFormComponent";
+import ApplicantForm from "./components/ApplicantForm";
 import "./style.css";
 
 const App = () => {
   return (
     <div>
       <ApplicantForm />
-      {/* <YourFormComponent/> */}
     </div>
   );
 };
