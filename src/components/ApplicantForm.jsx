@@ -9,10 +9,7 @@ const ApplicantForm = () => {
   window.onbeforeunload = function() {
     return "Data will be lost if you leave the page, are you sure?";
   };
-  // window.confirm =()=>{
-  //   return "Press Ok only if you have saved your changes"
-  // }
-  // initial state of the form
+
   const initialFormData = {
     personal_info: {
       present_address: {
@@ -122,13 +119,6 @@ const ApplicantForm = () => {
   //steps in the form
   const [currentStep, setCurrentStep] = useState(1);
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setFormData((prevFormData) => ({
-  //     ...prevFormData,
-  //     [name]: value,
-  //   }));
-  // };
 
   // handles the change in the form input fields
   const handleChange = (event) => {
@@ -181,20 +171,6 @@ const ApplicantForm = () => {
     console.log("Form submitted:", formData);
   };
 
-  // const renderStep = () => {
-  //   switch (currentStep) {
-  //     case 1:
-  //       return <PersonalInfo formData={formData} handleChange={handleChange} handleNextClick={handleNextClick} handlePreviousClick={handlePreviousClick} handleSubmit={handleSubmit}/>;
-  //     case 2:
-  //       return <FamilyInfo formData={formData} handleChange={handleChange} handleNextClick={handleNextClick} handlePreviousClick={handlePreviousClick} handleSubmit={handleSubmit}/>;
-  //     case 3:
-  //       return <AcademicInfo formData={formData} handleChange={handleChange} handleNextClick={handleNextClick} handlePreviousClick={handlePreviousClick} handleSubmit={handleSubmit}/>;
-  //     case 4:
-  //       return <CourseInfo formData={formData} handleChange={handleChange} handleNextClick={handleNextClick} handlePreviousClick={handlePreviousClick} handleSubmit={handleSubmit}/>;
-  //     default:
-  //       return <div>Error: Invalid step</div>;
-  //   }
-  // };
 
   // all the pages with all the prop functions
   const renderStep = [
@@ -244,13 +220,6 @@ const ApplicantForm = () => {
         {renderStep[currentStep-1]}
       </div>
 
-      {/* <div>
-        {currentStep > 1 && (
-          <button onClick={handlePreviousClick}>Previous</button>
-        )}
-        {currentStep < 4 && <button onClick={handleNextClick}>Next</button>}
-        {currentStep === 4 && <button onClick={handleSubmit}>Submit</button>}
-      </div> */}
     </div>
   );
 };
